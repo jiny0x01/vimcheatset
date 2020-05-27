@@ -145,7 +145,7 @@ function __promptline_right_prompt {
 function __promptline {
   local last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
 
-  local esc=$'[' end_esc=m
+  local esc=$'[' end_esc=m
   if [[ -n ${ZSH_VERSION-} ]]; then
     local noprint='%{' end_noprint='%}'
   elif [[ -n ${FISH_VERSION-} ]]; then
