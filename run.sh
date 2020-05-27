@@ -4,3 +4,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 mv .promptline ~/.promptline
 mv .zshrc ~/.zshrc
 mv .vim ~/.vim
+mv .vimrc ~/.vimrc
