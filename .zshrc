@@ -1,3 +1,3 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.promptline
-alias nom="norminette -R CheckForbiddenSourceHeader"
+alias norm="norminette -R CheckForbiddenSourceHeader"
