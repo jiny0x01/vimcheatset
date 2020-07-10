@@ -1,5 +1,6 @@
 # vimfor42
 vim setting all!
+work at zsh
 
 ## run
 > git clone https://github.com/JinyRubRub/vimfor42.git
