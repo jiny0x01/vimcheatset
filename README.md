@@ -22,4 +22,4 @@ write this command at command mode
 > :PlugInstall
 
 ## Finish
-> source ~/.promptline.sh
+> source ~/.promptline
