@@ -9,7 +9,7 @@ working well at zsh, bash
 
 > curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-> chmod 777 ./run.sh
+> chmod 755 ./run.sh
 
 > ./run.sh
 
