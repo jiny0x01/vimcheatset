@@ -1,11 +1,11 @@
-# vimfor42
-vim setting all!
+# vimcheatset
+vim set up repo!
 working well at zsh, bash
 
 ## run
-> git clone https://github.com/JinyRubRub/vimfor42.git
+> git clone https://github.com/jinykim0x80/vimcheatset.git
 
-> cd vimfor42
+> cd vimcheatset
 
 > curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
