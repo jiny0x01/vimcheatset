@@ -38,8 +38,6 @@ Plug 'Lokaltog/vim-easymotion' "커서이동
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter' "주석
 Plug 'edkolev/promptline.vim' "쉘프롬프트
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 Plug 'ronakg/quickr-cscope.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs' "짝맞추기
@@ -141,14 +139,6 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
-
-set tag=./tags;/
-let g:easytags_async = 1
-let g:easytags_auto_highlight = 1
-let g:easytags_include_members = 1
-let g:easytags_dynamic_files = 1
-let g:easytags_autorecurse = 1
-let g:easytags_cmd = '/usr/local/bin/ctags'
 
 "ycm config"
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
