@@ -5,6 +5,7 @@ set cindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set updatetime=300
 set number
 set ruler
 set title
@@ -31,6 +32,7 @@ Plug 'wadackel/vim-dogrun' 	"theme'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  "commandline search tool
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-pathogen'
 "Plug 'airblade/vim-gitgutter' "추가,삭제,변경내역 diff check 
 Plug 'tpope/vim-fugitive' "use git in vim
 Plug 'scrooloose/syntastic' "문법 체크
@@ -47,8 +49,8 @@ Plug 'pangloss/vim-simplefold' "코드접기
 Plug 'peterrincker/vim-argumentative' "함수 인자 위치변경
 Plug 'andrewradev/sideways.vim' "단어 좌우 이동 ,로 분리된거
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ycm-core/YouCompleteMe'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
 
@@ -85,13 +87,16 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 " 'scrooloose/syntastic' 
+execute pathogen#infect()
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+
+let g:syntastic_always_populate_loc_list = 2
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = "-std=c++14 -Wall -Wextra -Wpedantic"
 let g:syntastic_c_compiler_options = "-std=c11 -Wall -Wextra -Wpedantic"
@@ -123,7 +128,7 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_posix_standard = 1
 let g:cpp_class_decl_highlight = 1
-let g:cpp_experimental_template_highlight = 1
+"let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
 function! LoadCscope()
@@ -141,6 +146,19 @@ endfunction
 au BufEnter /* call LoadCscope()
 
 "ycm config"
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
 
 nmap <F4> :TagbarToggle<CR>
+
+
+augroup rainbow_list
+  autocmd!
+  autocmd FileType c,cpp,python,scheme RainbowParentheses,markdown
+augroup END
+
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['{', '}'], ['[', ']']]
+
+" List of colors that you do not want. ANSI code or #RRGGBB
+let g:rainbow#blacklist = [233, 234]
