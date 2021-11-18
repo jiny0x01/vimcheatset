@@ -3,7 +3,7 @@ vim set up repo!
 working well at zsh, bash
 
 ## run
-> git clone https://github.com/jinykim0x80/vimcheatset.git
+> git clone https://github.com/jiny0/vimcheatset.git
 
 > cd vimcheatset
 
